@@ -2075,7 +2075,7 @@ def _parse_kindergarten_classrooms(payload: dict[str, Any]) -> dict[int | str, s
         room = str(room).strip()
         if not room:
             continue
-        if not room.lower().startswith("sala"):
+        if room.isdigit():
             room = f"sala {room}"
         result[str(identifier)] = room
     return result
